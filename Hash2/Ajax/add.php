@@ -7,12 +7,7 @@ function keyGenerate(){
 		return $key;
 	}
 
-$polaczenie=@mysqli_connect("localhost","root","","HaszSet");
-if(!$polaczenie)
-{
-	echo "Problem polaczenia z baza danych";
-	exit(1);
-}
+include 'BaseFunction\loadBase.php';
 
 // Sprawdzam czy jest już w tabeli taka wartość
 

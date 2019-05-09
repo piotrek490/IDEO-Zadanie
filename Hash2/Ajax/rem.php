@@ -49,12 +49,7 @@ function delKey($key, $polaczenie){  //funkcja wyszukująca i usuwająca rekord 
 
 	
 
-$polaczenie=@mysqli_connect("localhost","root","","HaszSet");
-if(!$polaczenie)
-{
-	echo "Problem polaczenia z baza danych";
-	exit(1);
-}
+include 'BaseFunction\loadBase.php';
 
 // Sprawdza czy istnieje taka tabela
 

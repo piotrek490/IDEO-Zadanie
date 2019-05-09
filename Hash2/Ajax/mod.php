@@ -58,12 +58,7 @@ function modKey($key, $newValue, $polaczenie){  //funkcja wyszukująca i modyfik
 
 	
 
-$polaczenie=@mysqli_connect("localhost","root","","HaszSet");
-if(!$polaczenie)
-{
-	echo "Problem polaczenia z baza danych";
-	exit(1);
-}
+include 'BaseFunction\loadBase.php';
 
 	//Wywołanie funkcji wyszukującej i zmieniającej wartość "po kluczu"
 	modKey($_GET['key'],$_GET['value'], $polaczenie);

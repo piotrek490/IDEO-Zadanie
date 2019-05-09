@@ -3,12 +3,7 @@
 
 function connect(){
 	
-	$polaczenie=@mysqli_connect("localhost","root","","HaszSet");
-	if(!$polaczenie)
-	{
-		echo "Problem polaczenia z baza danych";
-		exit(1);
-	}
+	include 'BaseFunction\loadBase.php';
 	return $polaczenie;
 }
 
