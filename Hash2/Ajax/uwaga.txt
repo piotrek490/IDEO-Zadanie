@@ -1,0 +1,17 @@
+SELECT DISTINCT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE COLUMN_NAME IN ('dataKey')
+        AND TABLE_SCHEMA='haszset';
+
+
+/\ Komenda tworzy tabele z nazwami wszystkich tabel
+Wystarczy ¿e while fetch assoc przeliteruje t¹ tabele i dla ka¿dej nazwy tabeli
+wywo³am zapytanie które przeszuka moj¹ baze(wybran¹ tabelê) czy jest tam mój rekord o danym key'u.
+
+
+while($wiersz=mysql_fetch_assoc($wynik)){
+
+	$zapytanie = "select * from $wiersz['nazwa kolumny'] ";
+
+}
+

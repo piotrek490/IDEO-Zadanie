@@ -1,0 +1,66 @@
+body{
+	background:#e6ffe6;
+}
+
+.dataDiv{
+	float:left; 
+	border:1px solid black;
+	padding:3px;
+	margin:3px; 
+	text-align:center
+}
+
+.addBtn{
+	background: #8ff18f;
+	color: white;
+}
+
+.remBtn{
+	background: #f77070;
+	color: white;
+}
+
+.modBtn{
+	background: #95cdff;
+	color: white;
+}
+
+.sortBtn{
+	background: #efc780;
+	color: white;
+}
+
+#mainOption{
+	text-align:center;
+	float:left;
+	width: 30%;
+	height: 30px;
+	border: solid black 1px;
+	background: #add8ad;
+	
+	font-size: large;
+	font-weight: bold;
+	color:#dc5757;
+}
+
+#mainOption .addBtn{
+	background: #52e052;
+	color: white;
+}
+
+#mainOption .sortBtn{
+	background: #f7ba4d;
+	color: white;
+}
+
+#legendDiv{
+	text-align:center;
+	float:right;
+	width: 65%;
+	height: 30px;
+	border: solid black 1px;
+	background: #add8ad;
+	
+	font-size: large;
+	font-style: italic;
+}
