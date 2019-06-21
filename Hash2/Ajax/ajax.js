@@ -46,7 +46,7 @@ function addData(key){
 	if(XHR != null){
 		
 		do{
-			val=BigInt(prompt("Podaj wartość do dodania"));
+			val=BigInt(prompt("Podaj wartość do dodania (Max: 9*10^18)"));
 		}while(val==null)
 			
 		if(val == null) return null;
@@ -98,7 +98,7 @@ function modData(key){
 	
 	if(XHR != null){
 		
-		val=BigInt(prompt("Podaj wartość do dodania"));
+		val=BigInt(prompt("Podaj wartość do dodania (Max: 9*10^18)"));
 		
 		if(val  > 9000000000000000000){
 			alert("Zbyt duża wartość do dodania");
