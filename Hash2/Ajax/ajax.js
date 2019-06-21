@@ -46,16 +46,16 @@ function addData(key){
 	if(XHR != null){
 		
 		do{
-			val=prompt("Podaj wartość do dodania","");
+			val=BigInt(prompt("Podaj wartość do dodania"));
 		}while(val==null)
 			
 		if(val == null) return null;
 		
-		if(parseInt(val) > 9223372036854775807){
+		if(val > 9000000000000000000){
 			alert("Zbyt duża wartość do dodania");
 			return null;
 		}
-		if(parseInt(val)  < -9223372036854775807){
+		if(val < -9000000000000000000){
 			alert("Zbyt mała wartość do dodania");
 			return null;
 		}
@@ -98,13 +98,13 @@ function modData(key){
 	
 	if(XHR != null){
 		
-		val=prompt("Podaj nową wartość dla elementu: ","");
+		val=BigInt(prompt("Podaj wartość do dodania"));
 		
-		if(parseInt(val)  > 9223372036854775807){
+		if(val  > 9000000000000000000){
 			alert("Zbyt duża wartość do dodania");
 			return null;
 		}
-		if(parseInt(val)  < -9223372036854775807){
+		if(val  < -9000000000000000000){
 			alert("Zbyt mała wartość do dodania");
 			return null;
 		}
