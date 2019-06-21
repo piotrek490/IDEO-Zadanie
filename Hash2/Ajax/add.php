@@ -7,9 +7,12 @@ function keyGenerate(){
 		return $key;
 	}
 
-include 'BaseFunction\loadBase.php';
+include 'loadBase.php';
+//include 'trigFunc.php';
 
 // Sprawdzam czy jest już w tabeli taka wartość
+
+if($_GET['value']=="null") exit(1);
 
 $zapytanie="select * from ".$_GET['key']." where val=".$_GET['value'].";";
 $wynik = mysqli_query($polaczenie, $zapytanie);
@@ -20,9 +23,10 @@ if($switch) exit(1); //Jeśli jest już taka wartość -> "wyłączam" ten plik
 
 // Rozpoczynam dodawanie rekordu do tabeli
 
-$zapytanie="create table ".$_GET['key']." (val int(20),valNext int(20),dataKey text,isFirst int(1))CHARSET=utf8;"; //Tworzę tabele (jeśli nie istnieje!)	
+$zapytanie="create table ".$_GET['key']." (val bigint,valNext bigint,dataKey text,isFirst int(1))CHARSET=utf8;"; //Tworzę tabele (jeśli nie istnieje!)	
 $wynik = mysqli_query($polaczenie, $zapytanie);
 
+//tableVaccine($_GET['key']);
 
 $zapytanie="select * from ".$_GET['key']." where valNext is null limit 1;";	//sprawdam czy są już jakieś rekordy
 $wynik = mysqli_query($polaczenie, $zapytanie);

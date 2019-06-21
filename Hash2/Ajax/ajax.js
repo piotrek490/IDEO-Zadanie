@@ -51,6 +51,15 @@ function addData(key){
 			
 		if(val == null) return null;
 		
+		if(parseInt(val) > 9223372036854775807){
+			alert("Zbyt duża wartość do dodania");
+			return null;
+		}
+		if(parseInt(val)  < -9223372036854775807){
+			alert("Zbyt mała wartość do dodania");
+			return null;
+		}
+		
 		query = "key="+key+
 				"&value="+val;
 		XHR.open("GET", "Ajax/add.php?"+query, false);
@@ -90,6 +99,15 @@ function modData(key){
 	if(XHR != null){
 		
 		val=prompt("Podaj nową wartość dla elementu: ","");
+		
+		if(parseInt(val)  > 9223372036854775807){
+			alert("Zbyt duża wartość do dodania");
+			return null;
+		}
+		if(parseInt(val)  < -9223372036854775807){
+			alert("Zbyt mała wartość do dodania");
+			return null;
+		}
 		
 			query = "key=" + key +
 					"&value=" + val;

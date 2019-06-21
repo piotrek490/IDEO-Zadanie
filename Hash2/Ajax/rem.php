@@ -20,8 +20,8 @@ function delKey($key, $polaczenie){  //funkcja wyszukująca i usuwająca rekord 
 			
 			if($switch){ //Jeśli jest wynik w tej tabeli
 				echo "Wchodze!<br>"; 
-				//Ustaw obiektowi poprzedniemu, valNext obiektu następnego:     [1]->[2]->[3]     na    [1]->[3]
-				
+				//Ustaw obiektowi poprzedniemu, valNext obiektu następnego:     [1]->[2]->[3]     na    [1]->[3]		
+
 				$zapytanie_firstowe = "update ".$wiersz['TABLE_NAME'].
 										" set isFirst = (select * from (select isFirst from ".$wiersz['TABLE_NAME']." where dataKey like \"".$key."\") as tab1)".
 									" where val = (select * from (select valNext from ".$wiersz['TABLE_NAME']." where dataKey like \"".$key."\") as tab2);";
@@ -31,7 +31,7 @@ function delKey($key, $polaczenie){  //funkcja wyszukująca i usuwająca rekord 
 										" set valNext = (select * from (select valNext from ".$wiersz['TABLE_NAME']." where dataKey like \"".$key."\") as tab1)".
 										" where valNext = (select * from (select val from ".$wiersz['TABLE_NAME']." where dataKey like \"".$key."\") as tab2);";
 				$wynik_podmianka = mysqli_query($polaczenie,$zapytanie_podmianka);
-				
+								
 				//Usuń niepotrzebny obiekt z bazy danych:     [1]->[3] [2]  usuń:  [2]	
 				$zapytanie_usuniecie = "delete from ".$wiersz['TABLE_NAME'].
 										" where dataKey like \"".$key."\";";
@@ -55,7 +55,7 @@ function delKey($key, $polaczenie){  //funkcja wyszukująca i usuwająca rekord 
 
 	
 
-include 'BaseFunction\loadBase.php';
+include 'loadBase.php';
 
 // Sprawdza czy istnieje taka tabela
 

@@ -58,7 +58,7 @@ function modKey($key, $newValue, $polaczenie){  //funkcja wyszukująca i modyfik
 
 	
 
-include 'BaseFunction\loadBase.php';
+include 'loadBase.php';
 
 	//Wywołanie funkcji wyszukującej i zmieniającej wartość "po kluczu"
 	modKey($_GET['key'],$_GET['value'], $polaczenie);

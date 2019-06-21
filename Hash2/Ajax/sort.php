@@ -3,7 +3,7 @@
 
 function connect(){
 	
-	include 'BaseFunction\loadBase.php';
+	include 'loadBase.php';
 	return $polaczenie;
 }
 
